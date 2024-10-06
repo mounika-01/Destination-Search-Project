@@ -1,118 +1,73 @@
-// src/components/DestinationSearch.js
-import React, {useState} from 'react'
-import DestinationItem from '../DestinationItem'
-import './index.css'
+import DestinationSearch from './components/DestinationSearch'
+
+import './App.css'
+
 const destinationsList = [
   {
     id: 1,
-    name: 'Paris',
-    imgUrl:
-      'https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png',
+    name: 'Melaka Mosque',
+    imgUrl: 'https://assets.ccbp.in/frontend/react-js/melaka-mosque-img.png',
   },
   {
     id: 2,
-    name: 'New York',
-    imgUrl:
-      'https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png',
+    name: 'Shrubland',
+    imgUrl: 'https://assets.ccbp.in/frontend/react-js/shrubland-img.png',
   },
   {
     id: 3,
-    name: 'Tokyo',
-    imgUrl:
-      'https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png',
+    name: 'New York',
+    imgUrl: 'https://assets.ccbp.in/frontend/react-js/new-york-img.png',
   },
   {
     id: 4,
-    name: 'London',
-    imgUrl:
-      'https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png',
+    name: 'Escarpment',
+    imgUrl: 'https://assets.ccbp.in/frontend/react-js/escarpment-img.png',
   },
   {
     id: 5,
-    name: 'Berlin',
+    name: 'Westminster Abbey',
     imgUrl:
-      'https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png',
+      'https://assets.ccbp.in/frontend/react-js/westminster-abbey-img.png',
   },
   {
     id: 6,
-    name: 'Sydney',
+    name: 'South Downs National Park',
     imgUrl:
-      'https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png',
+      'https://assets.ccbp.in/frontend/react-js/south-downs-national-park-img.png',
   },
   {
     id: 7,
-    name: 'Rome',
+    name: 'National Historic Site',
     imgUrl:
-      'https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png',
+      'https://assets.ccbp.in/frontend/react-js/national-historic-site-img.png',
   },
   {
     id: 8,
-    name: 'Dubai',
-    imgUrl:
-      'https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png',
+    name: 'Tower Bridge',
+    imgUrl: 'https://assets.ccbp.in/frontend/react-js/tower-bridge-img.png',
   },
   {
     id: 9,
-    name: 'Singapore',
-    imgUrl:
-      'https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png',
+    name: 'Arc Here',
+    imgUrl: 'https://assets.ccbp.in/frontend/react-js/arc-here-img.png',
   },
   {
     id: 10,
-    name: 'Istanbul',
-    imgUrl:
-      'https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png',
+    name: 'Steeple',
+    imgUrl: 'https://assets.ccbp.in/frontend/react-js/steeple-img.png',
   },
   {
     id: 11,
-    name: 'Bangkok',
-    imgUrl:
-      'https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png',
+    name: 'Glaciokarst',
+    imgUrl: 'https://assets.ccbp.in/frontend/react-js/glaciokarst-img.png',
   },
   {
     id: 12,
-    name: 'Los Angeles',
+    name: 'Parco Nazionale delle Cinque Terre',
     imgUrl:
-      'https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png',
+      'https://assets.ccbp.in/frontend/react-js/parco-nazionale-delle-cinque-terre-img.png',
   },
 ]
+const App = () => <DestinationSearch destinationsList={destinationsList} />
 
-const DestinationSearch = () => {
-  const [searchInput, setSearchInput] = useState('')
-
-  const handleSearchInputChange = event => {
-    setSearchInput(event.target.value)
-  }
-
-  const filteredDestinations = destinationsList.filter(destination =>
-    destination.name.toLowerCase().includes(searchInput.toLowerCase()),
-  )
-
-  return (
-    <div className="destination-search-container">
-      <h1>Destination Search</h1>
-      <input
-        type="search"
-        className="search-input"
-        placeholder="Search Destinations"
-        value={searchInput}
-        onChange={handleSearchInputChange}
-      />
-      <img
-        className="search-icon"
-        src="https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png"
-        alt="search icon"
-      />
-      <ul className="destination-list">
-        {filteredDestinations.map(destination => (
-          <DestinationItem
-            key={destination.id}
-            destinationDetails={destination}
-          />
-        ))}
-      </ul>
-    </div>
-  )
-}
-
-export default DestinationSearch
+export default App
